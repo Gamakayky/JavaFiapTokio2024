@@ -27,6 +27,8 @@ conversão para:
 		
 		double dolarAmericano = reais / 5.64;
 		System.out.println("valor em dolar: " +dolarAmericano);
+		
+		sc.close();
 	}
 
 }

@@ -24,6 +24,8 @@ public class Exercicio07 {
 		
 		System.out.println("O troco e de: " + troco);
 		
+		sc.close();
+		
 	}
 
 }

@@ -75,11 +75,14 @@ public class Exercicio06 {
 		double valorPago2 = qtdPecas2 * valorPecas2;
 		
 		double valorTotal = valorPago1 + valorPago2;
+		System.out.println(valorTotal);
 		
 		
 		System.out.println();
 		System.out.printf("valor a ser pago por %s: %.2f\n", nomePeca1, valorPago1);
 		System.out.printf("valor a ser pago por %s: %.2f\n", nomePeca2, valorPago2);
+		
+		scanner.close();
 		
 		
 		
