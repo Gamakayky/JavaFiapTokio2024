@@ -8,9 +8,9 @@ public class Exercicio06 {
 		
 		/*
 		 * Faça um programa que receba o ano de nascimento da pessoa e retorne:
-▪ Se o voto é obrigatório este ano;
-▪ Se o voto é opcional este ano;
-▪ Se o voto é proibido este ano.
+		▪ Se o voto é obrigatório este ano;
+		▪ Se o voto é opcional este ano;
+		▪ Se o voto é proibido este ano.
 		 */
 		
 		Scanner sc = new Scanner(System.in);
@@ -19,12 +19,18 @@ public class Exercicio06 {
 		int anoNasc = sc.nextInt();
 		
 		int anoAtual = 2024;
-		int idade = anoNasc - anoAtual;
+		int idade = anoAtual - anoNasc;
 		
-		if ((idade >= 16 && idade < 18) || idade > 70) {
-			System.out.println("voto opcional");
-		} else if 
 		
+		if (idade < 16) {
+            System.out.println("Voto proibido");
+        } else if ((idade >= 16 && idade < 18) || idade > 70) {
+            System.out.println("Voto opcional");
+        } else {
+            System.out.println("Voto obrigatorio");
+        }
+		
+		sc.close();
 		
 	}
 

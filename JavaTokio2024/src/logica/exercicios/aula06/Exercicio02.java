@@ -6,6 +6,11 @@ public class Exercicio02 {
 
 	public static void main(String[] args) {
 		
+		/*
+		 * Faça um programa que peça dois números e imprima o maior deles, e informe caso
+		eles sejam iguais.
+		 */
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite um numero: ");

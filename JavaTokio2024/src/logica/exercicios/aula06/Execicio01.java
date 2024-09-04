@@ -6,6 +6,10 @@ public class Execicio01 {
 
 	public static void main(String[] args) {
 		
+		/*
+		 * Faça um programa que leia um número, e informe se ele é par ou impar.
+		 */
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite um numero: ");

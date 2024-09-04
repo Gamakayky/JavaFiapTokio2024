@@ -8,15 +8,15 @@ public class Exercicio05 {
 		
 		/*
 		 * Escreva um algoritmo que recebe dois números e um caractere (representando uma
-das operações matemáticas (+, -, *, /)
-▪ O programa deve calcular o valor final de acordo com a operação selecionada.
-▪ Ou seja, se a entrada for 5, 6 e *, então seu programa dever mostrar 30.
+		das operações matemáticas (+, -, *, /)
+		▪ O programa deve calcular o valor final de acordo com a operação selecionada.
+		▪ Ou seja, se a entrada for 5, 6 e *, então seu programa dever mostrar 30.
 
-▪ Dica: switch/case facilita as coisas.
+		▪ Dica: switch/case facilita as coisas.
 		 */
 		
-
-		 Scanner scanner = new Scanner(System.in);
+		/*		 
+			 Scanner scanner = new Scanner(System.in);
 	        boolean continuar = true;
 
 	        while (continuar) {
@@ -70,11 +70,49 @@ das operações matemáticas (+, -, *, /)
 
 	        System.out.println("Programa encerrado.");
 	        scanner.close();
-	
-
-
+			*/
 		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Digite o primeiro numero: ");
+		double n1 = sc.nextDouble();
+
+		System.out.println("Digite o segundo numero: ");
+		double n2 = sc.nextDouble();
+
+		System.out.println("Digite o caracter da operacao [+, -, *, /]: ");
+		char operacao = sc.next().charAt(0);
+
+		System.out.println("Primeiro numero: " + n1);
+		System.out.println("Segundo numero: " + n2);
+		System.out.println("Operacao selecionada foi: " + operacao);
+
+		double resultado = 0;
+
+		switch (operacao) {
+		case '+':
+			resultado = n1 + n2;
+			break;
+		case '-':
+			resultado = n1 - n2;
+			break;
+		case '*':
+			resultado = n1 * n2;
+			break;
+		case '/':
+			if (n2 != 0) {
+				resultado = n1 / n2;
+			} else {
+				System.out.println("nao e possivel dividir por 0");
+			}
+			break;
+		default:
+			System.out.println("Operacao invalida");
+		}
+
+		System.out.println("Resultado: " + resultado);
 		
+		sc.close();
 
 	}
 

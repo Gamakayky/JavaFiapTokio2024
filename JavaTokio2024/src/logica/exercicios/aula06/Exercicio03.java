@@ -6,6 +6,14 @@ public class Exercicio03 {
 
 	public static void main(String[] args) {
 		
+		/*
+		 * Faça um programa para a leitura de quatro notas parciais de um aluno. O programa
+		deve calcular a média alcançada pelo aluno e apresentar:
+		▪ A mensagem "Aprovado", se a média alcançada for maior ou igual a sete;
+		▪ A mensagem "Em recuperação", se a média for entre cinco, incluindo o cinco, e sete;
+		▪ A mensagem "Reprovado", se a média for menor que cinco.
+		 */
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite a nota A: ");
