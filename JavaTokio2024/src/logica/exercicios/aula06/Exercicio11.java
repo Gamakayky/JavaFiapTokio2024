@@ -20,60 +20,65 @@ public class Exercicio11 {
 		▪ o valor total transportado pelo caminhão (carga + impostos)
 		 */
 		
-		 Scanner sc = new Scanner(System.in);
-
-	        System.out.println("Digite o código do estado de origem da carga (1 a 5): ");
-	        int codigoEstado = sc.nextInt();
-
-	        System.out.println("Digite o peso da carga do caminhão (em toneladas): ");
-	        double pesoCargaToneladas = sc.nextDouble();
-
-	        System.out.println("Digite o código da carga (entre 10 e 40): ");
-	        int codigoCarga = sc.nextInt();
-
-	        if (codigoEstado < 1 || codigoEstado > 5) {
-	            System.out.println("Código do estado inválido.");
-	            sc.close();
-	            return;
-	        }
-
-	        if (codigoCarga < 10 || codigoCarga > 40) {
-	            System.out.println("Código da carga inválido.");
-	            sc.close();
-	            return;
-	        }
-	        double pesoCargaQuilos = pesoCargaToneladas * 1000;
-
-	        double precoCarga = codigoCarga * 10.0; 
-
-	        double imposto = 0.0;
-	        switch (codigoEstado) {
-	            case 1:
-	                imposto = precoCarga * 0.05; 
-	                break;
-	            case 2:
-	                imposto = precoCarga * 0.10; 
-	                break;
-	            case 3:
-	                imposto = precoCarga * 0.15; 
-	                break;
-	            case 4:
-	                imposto = precoCarga * 0.20; 
-	                break;
-	            case 5:
-	                imposto = precoCarga * 0.25; 
-	                break;
-	        }
-
-	        double valorTotal = precoCarga + imposto;
-
-	        System.out.println("Peso da carga (em quilos): " + String.format("%.2f", pesoCargaQuilos));
-	        System.out.println("Preço da carga: R$ " + String.format("%.2f", precoCarga));
-	        System.out.println("Valor do imposto: R$ " + String.format("%.2f", imposto));
-	        System.out.println("Valor total transportado: R$ " + String.format("%.2f", valorTotal));
-
-	        sc.close();
-		
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Origem/Estado da carga (1-5): ");
+			int estado = sc.nextInt();
+			
+			System.out.println("Digite o peso do caminhao em toneladas: ");
+			double pesoToneladas = sc.nextDouble();
+			
+			System.out.println("Codigo da carga (10-40): ");
+			int codCarga = sc.nextInt();
+			
+			// COMEÇAR A REALIZAR OS CALCULOS
+			
+			// CONVERTENDO PARA KILOGRAMAS
+			double pesoKg = pesoToneladas * 1000;
+			
+			double precoPorKg = 0;
+			
+			if (codCarga >= 10 && codCarga <= 20) {
+				precoPorKg = 100;
+			} else if (codCarga <= 30) {
+				precoPorKg = 250;
+			} else if (codCarga <= 40) {
+				precoPorKg = 340;
+			}
+			
+			// ESTOU VERFIFCANDO QUAL SERA A PORCENTAGEM DO IMPOSTO DE ACORDO COM O ESTADO DE ORIGEM
+			double impostoPorcentagem = 0;
+			
+			if (estado == 1) {
+				impostoPorcentagem = 0.35;
+			} else if (estado == 2) {
+				impostoPorcentagem = 0.25;
+			} else if (estado == 3) {
+				impostoPorcentagem = 0.15;
+			} else if (estado == 4) {
+				impostoPorcentagem = 0.05;
+			} else if (estado == 5) {
+				impostoPorcentagem = 0;
+			}
+			
+			// CALCULAR O PREÇO DA CARGA
+			double precoCarga = pesoKg * precoPorKg; // 1000 * 340 = 340.000
+			
+			// CALCULAR O VALOR DO IMPOSTO
+			double imposto = precoCarga * impostoPorcentagem; // 340.000 * 0.05 = 17.000
+			// CALCULAR O VALOR FINAL 
+			double valorFinal = precoCarga + imposto; // 340.000 + 17.500 = 357.000
+			
+			System.out.println("Peso da carga em kg: " + pesoKg);
+			System.out.println("Preco da carga em: " + precoCarga);
+			System.out.println("Valor do imposto: " + imposto);
+			System.out.println("Valor final: " + valorFinal);
+			
+			sc.close();
+			
+			
+			
+			
 		
 		
 	}

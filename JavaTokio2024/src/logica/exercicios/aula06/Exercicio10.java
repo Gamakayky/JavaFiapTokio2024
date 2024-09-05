@@ -20,7 +20,7 @@ public class Exercicio10 {
 		▪ O valor do aumento.
 		▪ O novo salário, após o aumento.
 		 */
-		
+		/*
 		Scanner sc = new Scanner (System.in);
 		
 		System.out.println("Digite o seu salario: ");
@@ -49,7 +49,40 @@ public class Exercicio10 {
 	        System.out.println("Novo salario, apos o aumento: R$ " + String.format("%.2f", novoSalario));
 
 	        sc.close();
-
+			*/
+		
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Digite o salario atual: ");
+			double salarioAtual = sc.nextDouble();
+			
+			double reajuste;
+			
+			if (salarioAtual <= 280) {
+				reajuste = 0.2;
+			} else if (salarioAtual <= 700) {
+				reajuste = 0.15;
+			} else if (salarioAtual <= 1500) {
+				reajuste = 0.10;
+			} else {
+				reajuste = 0.05;
+			}
+			
+			System.out.println(reajuste);
+			
+			double valorAumento = salarioAtual * reajuste;
+			
+			System.out.println(valorAumento);
+			
+			double novoSalario = salarioAtual + valorAumento;
+			
+			System.out.println("Salario antes do reajuste: " + salarioAtual);
+			System.out.println("Percentual do aumento: " + reajuste*100 + "%");
+			System.out.println("Valor do aumento: " + valorAumento);
+			System.out.println("Novo salario com aumento: " + novoSalario);
+			
+			sc.close();
+			
 	}
 
 }
