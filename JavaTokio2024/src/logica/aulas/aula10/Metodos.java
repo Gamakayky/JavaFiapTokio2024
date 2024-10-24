@@ -14,7 +14,10 @@ public class Metodos {
 		String nome = sc.nextLine();
 		
 		System.out.println("Seja bem vindo, " + nome);
+	
+		sc.close();
 	}
+	
 	
 
 
